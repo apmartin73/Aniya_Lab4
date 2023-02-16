@@ -18,12 +18,13 @@ void printMenu(int& choice) {
 
 void factorial(int& A) {
 	// I recommend writing your factorial code here
-	int B;
-	B = A * (--A);
+	int B = 1;
+	//B = A * (--A);
 
 	cout << "Factorial: " << endl;
 	cout << "Enter a number: ";
 	cin >> A;
+	int i= 1;
 
 	if (A < 0) {
 		cout << "Please enter a POSITIVE number :)...: ";
@@ -32,14 +33,18 @@ void factorial(int& A) {
 
 	else if (A >= 0) {
 		// cout << A << "=" << endl;
-	}
 
-	while (A > 0) {
-		cout << A << "!" << " = ";
 
-		cout << (--A) << "*";
+		while ( i <= A) {
+			//cout << A << "!" << " = ";
 
-		cout << " = " << B;
+			//cout << A << "*" << endl;
+			B =B * i;
+			i++;
+			
+			
+		}
+		cout << B;
 	}
 }
 void arithmetic() {
