@@ -1,6 +1,3 @@
-// Aniya_Lab4.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 
 using namespace std;
@@ -31,26 +28,95 @@ void factorial(int& A) {
 
 	else if (A >= 0) {
 		cout << A << "! = ";
-
+		
 		for (int i = 1; i <= A; i++) {
 
+			cout << " * " << i ;
 			B *= i;
-			cout << B << " * ";
 			
 		}
-		cout << "= " << B << endl;
+
+		cout << " = " << B << endl;
 	}
 }
-void arithmetic() {
-	// I recommend writing your arithmetic series code here
+void arithmetic(int& s, int& a, int& e) {
+	int C= 1;
+
+	cout << "Arithmetic Series: " << endl;
+	cout << "Enter a number to start at: ";
+	cin >> s;
+	cout << "Enter a number to add or subtract each time: ";
+	cin >> a;
+	cout << "Enter the number of elements in the series: ";
+	cin >> e;
+
+	if (e < 0) {
+		cout << "Please enter a POSITIVE amount of elements!...: ";
+		cin >> e;
+	}
+
+	else if (e >= 0) {
+
+		
+			C = s;
+			cout << s;
+			for (int i = 1; i < e; i++) {
+
+				
+				s  += a;
+
+				C += s;
+				cout <<  " + " << s ;
+				
+			}
+
+			cout << " = " << C << endl;
+
+	}
 }
-void geometric() {
-	// I recommend writing your geometric series code here
+void geometric(int& s, int& m, int& e) {
+	int D = 1;
+
+	cout << "Geometric Series: " << endl;
+	cout << "Enter a number to start at: ";
+	cin >> s;
+	cout << "Enter a number to multiply by each time: ";
+	cin >> m;
+	cout << "Enter the number of elements in the series: ";
+	cin >> e;
+
+	if (e < 0) {
+		cout << "Please enter a POSITIVE amount of elements!...: ";
+		cin >> e;
+	}
+
+	else if (e >= 0) {
+
+
+		D = s;
+		cout << s;
+		for (int i = 1; i < e; i++) {
+
+
+			s *= m;
+
+			D += s;
+			cout << " + " << s;
+
+		}
+
+		cout << " = " << D << endl;
+
+	}
 }
 int main() {
 	int choice;
 	char again;
 	int A;
+	int s;
+	int a;
+	int e;
+	int m;
 
 	do {
 		printMenu(choice);
@@ -63,10 +129,10 @@ int main() {
 			factorial(A);
 		}
 		else if (choice == 2) {
-			arithmetic();
+			arithmetic(s, a, e);
 		}
 		else if (choice == 3) {
-			geometric();
+			geometric(s, m, e);
 		}
 		cout << "Go Again? [Y/N] ";
 		cin >> again;
